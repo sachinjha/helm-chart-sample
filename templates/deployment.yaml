@@ -59,7 +59,7 @@ spec:
       volumes:
         - name: wwwdata-volume
           configMap:
-            name: {{ template "nginx.fullname" . }}
+            name: {{ template "my-nginx-chart.fullname" . }}
         {{- if .Values.configMapName }}
         - name: config
           configMap:
