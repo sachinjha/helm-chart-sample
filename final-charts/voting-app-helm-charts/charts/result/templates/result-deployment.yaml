@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: result
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: result
+    spec:
+      containers:
+      - image: optumera.icp:8500/default/result:0.1.0
+        name: result
+        imagePullPolicy: IfNotPresent
+      imagePullSecrets:
+        - name: registry-secret

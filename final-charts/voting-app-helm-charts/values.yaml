@@ -1,0 +1,26 @@
+global:
+  serviceAccountName: default
+worker: 
+  replicaCount: 1
+  image:
+    repository: optumera.icp:8500/default/worker 
+    tag: 0.1.0
+    pullPolicy: IfNotPresent
+vote:
+  replicaCount: 1
+  image:  
+    repository: optumera.icp:8500/default/vote 
+    tag: 0.1.0
+    pullPolicy: IfNotPresent
+  service:
+    type: NodePort 
+    port: 80
+result: 
+  replicaCount: 1
+  image:
+    repository: optumera.icp:8500/default/result 
+    tag: 0.1.0
+    pullPolicy: IfNotPresent
+  service:
+    type: NodePort 
+    port: 80
